@@ -1,0 +1,1 @@
+idf_component_register(SRCS "main.c" "e32_lora_driver.c" "my_6050_driver.c" INCLUDE_DIRS ".")
