@@ -59,7 +59,6 @@ SOFTWARE.*/
 #define TAG "EMBEDDED GREENS"
 #define DHT11_GPIO GPIO_NUM_13
 
-// Fire risk label
 const char* get_fire_risk_level(int score) {
     if (score >= 8) return "CRITICAL";
     else if (score >= 5) return "HIGH";
@@ -74,23 +73,23 @@ void app_main() {
     my_mpu6050_init();
     DHT11_init(13);
     e32_init();
+    gpio_set_direction(2, GPIO_MODE_OUTPUT);
 
-    vTaskDelay(pdMS_TO_TICKS(2000));  // Wait for sensor stabilization
+    vTaskDelay(pdMS_TO_TICKS(2000));  
     while (1) {
         float temp, acc_x, acc_y, acc_z, wind_speed;
         float humidity;
 
-        // Simulated temperature from MPU6050 (you can use actual sensor method)
+        // Temperature from MPU6050 
         mpu6050_read_temperature(&temp);
-
-        humidity = (rand() % 10) + 30;  // range: 10–49%
+        humidity = (rand() % 10) + 30; 
 
         // Read MPU6050 Acceleration
         mpu6050_read_acceleration(&acc_x, &acc_y, &acc_z);
 
-        // Calculate wind speed using magnitude formula
+        // Calculating wind speed using magnitude formula
         wind_speed = sqrtf(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z);
-        wind_speed *= 10.0f;  // scale factor for demo
+        wind_speed *= 10.0f;  
 
         // Fire Risk Score Calculation
         int score = 0;
@@ -109,7 +108,7 @@ void app_main() {
 
         const char* level = get_fire_risk_level(score);
 
-        // Print to Serial Console
+        // Print to Serial Monitor
         printf("\n📊 Wildfire Risk Evaluation\n");
         printf("-----------------------------\n");
         printf("🌡️  Temp       : %.2f °C\n", temp);
@@ -124,7 +123,6 @@ void app_main() {
                      "🔥 ALERT: Fire Risk %s | Temp: %.2f°C | Humidity: %.2f%% | Wind: %.2f",
                      level, temp, humidity, wind_speed);
             e32_transmit(alert_msg);
-            gpio_set_direction(2, GPIO_MODE_OUTPUT);
             gpio_set_level(2, 1);
             vTaskDelay(pdMS_TO_TICKS(300));
             gpio_set_level(2, 0);
