@@ -1,8 +1,13 @@
-// LoRa Module (E32-433T30D by EByte) Driver Code
-// File Name: e32_lora_driver.h.c
+// LoRa Module (E32-433T30D by EByte) Driver Header Code
+// File Name: e32_lora_driver.h
 // Author: Fayyaz Shaikh
 // Email ID: fayyaz.shaikh24@spit.ac.in
 // LinkedIn: https://www.linkedin.com/in/fayyaz-shaikh-7646312a3/ 
+
+// © 2025 Fayyaz Shaikh & Team Embedded Greens
+// This code and associated idea are protected under Indian copyright law.
+// Unauthorized reproduction or commercial use is strictly prohibited.
+// Patent pending — do not use or file without written permission.
 
 /*MIT License
 
