@@ -20,11 +20,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
-// File: MPU_6050 Driver Code
+// File: MPU_6050 Driver Header Code
 // Motion Processing Unit- MPU6050 Driver Code for ESP-IDF
 // Author: Fayyaz Shaikh
 // Email ID: fayyaz.shaikh24@spit.ac.in
 // LinkedIn: https://www.linkedin.com/in/fayyaz-shaikh-7646312a3/
+
+// © 2025 Fayyaz Shaikh & Team Embedded Greens
+// This code and associated idea are protected under Indian copyright law.
+// Unauthorized reproduction or commercial use is strictly prohibited.
+// Patent pending — do not use or file without written permission.
+
 
 #ifndef MY_6050_DRIVER_H
 #define MY_6050_DRIVER_H
