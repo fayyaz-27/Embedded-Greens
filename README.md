@@ -1,6 +1,6 @@
 # Embedded Greens 🌱
 
-A LoRa-based climate and fire monitoring system using ESP32, built for the DigiGreen 2025 Online Hackathon.
+A LoRa-based climate and fire monitoring system using ESP32 Dev Module.
 
 ## Features
 - LoRa long-range data transfer
