@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Embedded Greens 🌱
 
 A LoRa-based climate and fire monitoring system using ESP32 Dev Module.
